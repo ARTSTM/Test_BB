@@ -145,7 +145,8 @@ static void FillBuffer(uint32_t size, uint8_t mode)
 {
   IKS01A3_MOTION_SENSOR_Axes_t acc_axes;
   uint32_t idx = 0;
-
+  
+  /* printf->UART is blocking, consider Baderate when changing Accelerometer ODR or switch to buffered UART DMA */
   while (idx < size)
   {
     if (dataRdyFlag!=RESET)
