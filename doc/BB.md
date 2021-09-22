@@ -2,10 +2,7 @@
 Presentation
 ----!
 
-
-# Adding code
-
-## 1 - Code section: /* USER CODE BEGIN Includes */
+# 1 - Code section: /* USER CODE BEGIN Includes */
 
 ```c
 /* Step #1 Include of header files: sensor driver, NEAI lib, printf */
@@ -15,7 +12,7 @@ Presentation
 #include "stdio.h"
 ```
 
-## 2 - Code section: /* USER CODE BEGIN PTD */
+# 2 - Code section: /* USER CODE BEGIN PTD */
 
 ```c
 /* Step #2 Definition of enumerated type of FSM states*/
@@ -27,7 +24,8 @@ typedef enum
 } States_t;
 ```
 
-## 3 - Code section: /* USER CODE BEGIN PD */
+# 3 - Code section: /* USER CODE BEGIN PD */
+
 ```c
 /* Step #3 Application configuration */
 #define ACCELERO_ODR         (float)(26.0)  /* Accelerometer Output Data Rate [Hz] */
@@ -42,7 +40,8 @@ typedef enum
 #define LD2_ANOMALY_PERIOD   (uint32_t)(20)
 ```
 
-## 4 - Code section: /* USER CODE BEGIN PV */
+# 4 - Code section: /* USER CODE BEGIN PV */
+
 ```c
 /* Step #4 Variables definition */
 volatile States_t appState = LEARN;  /* FSM state */
@@ -52,7 +51,8 @@ volatile uint32_t ld2Period = 0;  /* LD2 toggle timing to be set by user */
 static float neaiBuf[SIGNAL_SIZE];  /* Signal buffer */
 ```
 
-## 5 - Code section: /* USER CODE BEGIN PFP */
+# 5 - Code section: /* USER CODE BEGIN PFP */
+
 ```c
 /* Step #5 Private function prototypes */
 static void MEMS_Init(void);
@@ -63,7 +63,8 @@ static void Learn(void);
 static void Inference(void);
 ```
 
-## 6 - Code section: /* USER CODE BEGIN 0 */
+# 6 - Code section: /* USER CODE BEGIN 0 */
+
 ```c
 /* Step #6 Redirection of printf output stream to ST-Link VCP */
 int _write(int fd, char * ptr, int len)
@@ -73,7 +74,8 @@ int _write(int fd, char * ptr, int len)
 }
 ```
 
-## 7 - Code section: /* USER CODE BEGIN 2 */
+# 7 - Code section: /* USER CODE BEGIN 2 */
+
 ```c
 /* Step #7 Application initialization */
 MEMS_Init();
@@ -81,7 +83,8 @@ MODE_Init();
 NanoEdgeAI_initialize();
 ```
 
-## 8 - Code section: /* USER CODE BEGIN 3 */
+# 8 - Code section: /* USER CODE BEGIN 3 */
+
 ```c
 /* Step #8 Main loop: Finite State Machine */
 switch (appState)
@@ -102,7 +105,8 @@ switch (appState)
 }
 ```
 
-## 9 - Code section: /* USER CODE BEGIN 4 */
+# 9 - Code section: /* USER CODE BEGIN 4 */
+
 ```c
 /* Step #9 Application code, EXTI and SysTick callbacks*/
 static void MODE_Init(void)
