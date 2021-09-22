@@ -1,0 +1,24 @@
+{
+  "githubLoc": "https://github.com/ARTSTM/Test_BB/tree/main/",
+  "filesToLoadArr": [
+    {
+      "name": "1. Code to copy",
+      "path": "",
+      "file": "BB.md"
+    }
+  ],
+
+  "menuStructure": [
+    {
+      "type": "Folder",
+      "name": "Code to copy",
+      "children":[
+        {
+          "type": "File",
+          "name": "1. Code to copy",
+          "file": "BB.md"
+        }
+      ]
+    }
+  ]
+}
